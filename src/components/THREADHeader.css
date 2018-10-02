@@ -1,0 +1,20 @@
+.box {
+  border: 1px red solid;
+}
+
+.logo {
+  display: block;
+  height: 100px;
+  border-radius: 10%;
+}
+
+.project-name {
+  text-align: center;
+}
+
+.App-header {
+  background-color: white;
+  height: auto;
+  padding: 20px;
+  color: #9B4542;
+}
