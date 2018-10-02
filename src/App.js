@@ -1,20 +1,18 @@
-import React, { Component } from "react";
-import "./App.css";
-import THREADHeader from "./components/THREADHeader";
-import MapComponent from "./components/MapComponent";
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <THREADHeader />
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
         <p className="App-intro">
-          THREAD is a dynamic and innovative collaboration of diverse partners
-          from business, design, education, research and refugee support
-          agencies aiming to achieve life-changing results for women who are
-          forging new lives in Denmark.
+        code, edit <code>src/App.js</code> and save to reload.
         </p>
-        <MapComponent />
       </div>
     );
   }
