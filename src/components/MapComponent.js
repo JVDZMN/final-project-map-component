@@ -1,13 +1,39 @@
 import React from "react";
-import "./MapComponent.css"
+import "./MapComponent.css";
+import { compose, withProps } from "recompose"
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
-function MapComponent(props){
-  return (
-    <div>
-      <iframe title="MapComponent" className="mapclass" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2250.5756101678567!2d12.538978918779287!3d55.66159003753266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652538325fbd4b9%3A0x39ed45f8aba4dc41!2sEnghavevej+80%2C+2450+K%C3%B8benhavn!5e0!3m2!1sen!2sdk!4v1520375910646" allowfullscreen></iframe>
-    </div>
-    
-  );
-}
+/*
+import { GoogleMap, Marker } from "react-google-maps"
+
+const MapComponent = (props) =>
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+  >
+    {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
+  </GoogleMap>
+*/
+
+
+
+const MapComponent = compose(
+  withProps({
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
+    loadingElement: <div style={{ height: `100%` }} />,
+    containerElement: <div style={{ height: `400px` }} />,
+    mapElement: <div style={{ height: `100%` }} />,
+  }),
+  withScriptjs,
+  withGoogleMap
+)((props) =>
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+  >
+    {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
+  </GoogleMap>
+);
+
 
 export default MapComponent;

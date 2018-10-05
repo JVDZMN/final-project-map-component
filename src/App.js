@@ -14,7 +14,8 @@ class App extends Component {
           agencies aiming to achieve life-changing results for women who are
           forging new lives in Denmark.
         </p>
-        <MapComponent />
+        
+        <MapComponent isMarkerShown />
       </div>
     );
   }
