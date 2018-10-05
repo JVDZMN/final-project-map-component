@@ -8,12 +8,6 @@ class App extends Component {
     return (
       <div className="App">
         <THREADHeader />
-        <p className="App-intro">
-          THREAD is a dynamic and innovative collaboration of diverse partners
-          from business, design, education, research and refugee support
-          agencies aiming to achieve life-changing results for women who are
-          forging new lives in Denmark.
-        </p>
         <MapComponent />
       </div>
     );
